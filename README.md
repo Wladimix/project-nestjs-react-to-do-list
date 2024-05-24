@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://github.com/devicons/devicon/blob/master/icons/nestjs/nestjs-original.svg" title="NESTJS" alt="NESTJS" width="200" height="200">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/nestjs/nestjs-original.svg" title="NESTJS" alt="NESTJS" width="100" height="100">
    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TYPESCRIPT" alt="TYPESCRIPT" width="200" height="200">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="TYPESCRIPT" alt="TYPESCRIPT" width="100" height="100">
   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="REACT" alt="REACT" width="200" height="200">
+  <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="REACT" alt="REACT" width="100" height="100">
 </p>
 
 # Веб приложение Real Time To-Do-List
