@@ -1,0 +1,74 @@
+.authorization-card-title {
+	color: #3F51B5;
+}
+
+.authorization-card-button {
+	background-color: #3F51B5;
+}
+
+.authorization-card-error-message {
+	color: red;
+}
+
+.home-card {
+	border-radius: .75rem;
+	background-color: #eff1f2;
+}
+
+.add-task-button {
+	border: none;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0);
+	transition: background-color 0.2s;
+}
+
+.add-task-button:hover {
+	background-color: rgba(79, 102, 153, 0.2);
+}
+
+.add-task-button:disabled {
+	background-color: rgba(0, 0, 0, 0);
+	opacity: 0.5;
+}
+
+.add-task-title-input {
+	font-size: 22px;
+	border: none;
+}
+
+.add-task-due-date-card {
+	background-color: #cadbec;
+	border: none;
+	border-radius: 10px;
+}
+
+.add-task-due-date-datepicker {
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.no-task-message-to-do-list {
+	font-size: 30px;
+	color: #3F51B5;
+}
+
+.task-title {
+	word-wrap: break-word;
+	max-width: 500px
+}
+
+.action-task-buttons {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+}
+
+.action-task-buttons:hover {
+	background-color: rgba(232, 239, 240, 0.9);
+	border-radius: 10px;
+}
+
+.title-delete-task-modal {
+	word-wrap: break-word;
+	hyphens: auto;
+}
