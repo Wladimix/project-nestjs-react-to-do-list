@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   postgresql_database:
     container_name: postgresql_container
@@ -13,6 +12,5 @@ services:
   adminer:
     container_name: adminer_container
     image: adminer:4
-    restart: always
     ports:
       - 3003:8080

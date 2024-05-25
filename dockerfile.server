@@ -1,0 +1,13 @@
+FROM node:20.13.1
+
+ARG APP_DIR=app
+RUN mkdir -p ${APP_DIR}
+WORKDIR ${APP_DIR}
+
+COPY ./backend/package*.json ./
+
+RUN npm install
+
+COPY ./backend .
+
+CMD ["npm", "start"]
