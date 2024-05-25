@@ -6,12 +6,12 @@ export class FileService {
 	sendTaskImageToServer(taskId: number, image: File | undefined): boolean | string {
 		try {
 			if (image) {
-				/* if (
+				if (
 					image.type !== 'image/jpeg' &&
 					image.type !== 'image/png'
 				) {
 					return 'ошибка загрузки файла';
-				} */
+				}
 
 				const reader = new FileReader();
 				reader.onload = (event) => {
