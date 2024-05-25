@@ -18,7 +18,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migrate": "npx prisma migrate reset --force",
-    "seed": "npx ts-node prisma/seed.ts "
+    "seed": "npx ts-node prisma/seed.ts ",
+    "start:migrate-seed": "npx concurrently 'npm run migrate' 'npm run seed' 'npm run start'"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -32,6 +33,7 @@
     "@prisma/client": "^5.14.0",
     "@types/uuid": "^9.0.8",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "jimp": "^0.22.12",
     "js-base64": "^3.7.7",
     "reflect-metadata": "^0.2.0",

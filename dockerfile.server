@@ -1,0 +1,11 @@
+FROM node:20.13.1
+
+ARG APP_DIR=app
+RUN mkdir -p ${APP_DIR}
+WORKDIR ${APP_DIR}
+
+COPY ./backend ./
+
+RUN npm install
+
+CMD ["npm", "run", "start:migrate-seed"]
