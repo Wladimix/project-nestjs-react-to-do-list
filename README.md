@@ -54,7 +54,11 @@ npm run seed
 ```
 npm start
 ```
-В файле .env можно прописать другой порт.
+В файле .env можно прописать другой порт.<br>
+:grey_exclamation: Среди скриптов package.json присутствует общая команда для запуска миграции, сида и самого сервера:
+```
+npm run start:migrate-seed
+```
 ### Клиент
 Для запуска клиентской части нужно перейти в папку /frontend, также установить зависимости:
 ```
@@ -89,22 +93,8 @@ docker build -f dockerfile.server -t to_do_server .
 ```
 docker build -f dockerfile.react -t to_do_client .
 ```
-Запускаем сервер:
+Осталось запустить сервер и клиент:
 ```
-docker run -p 3001:3001 -p 8001:8001 -d --name server_container to_do_server
-```
-Теперь нужно внутри контейнера выполнить команды миграции и добавления фиктивных данных. Заходим в терминал контейнера:
-```
-docker exec -it server_container bash
-```
-Заполняем базу данных и выходим:
-```
-npm run migrate
-npm run seed
-exit
-```
-Осталось запустить клиент:
-```
-docker run -p 3004:3004 -d --name client_container to_do_client
+docker run -p 3001:3001 -p 8001:8001 -d --name server_container to_do_server && docker run -p 3004:3004 -d --name client_container to_do_client
 ```
 Заходим по адресу http://localhost:3004.
