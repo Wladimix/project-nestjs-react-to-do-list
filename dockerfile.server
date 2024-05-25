@@ -4,10 +4,8 @@ ARG APP_DIR=app
 RUN mkdir -p ${APP_DIR}
 WORKDIR ${APP_DIR}
 
-COPY ./backend/package*.json ./
+COPY ./backend ./
 
 RUN npm install
-
-COPY ./backend .
 
 CMD ["npm", "run", "start:migrate-seed"]
