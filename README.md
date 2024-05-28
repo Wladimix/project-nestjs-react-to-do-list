@@ -34,7 +34,7 @@ DATABASE_URL="postgresql://root:root@localhost:3002/to_do_list?schema=public"
 ```
 <i>:exclamation: Если БД на хосте отсутствует, можно запустить Postgresql и Adminer в Docker-контейнерах, находясь в корне проекта:</i>
 ```
-docker-compose -f docker-compose-database.yml up -d
+docker compose -f docker-compose-database.yml up -d
 ```
 :arrow_up: <i>В этом случае для просмотра содержимого БД можно подключиться к Adminer по адресу http://localhost:3003.</i><br><br>
 В папке /backend установить необходимые зависимости:
@@ -102,5 +102,5 @@ docker run -p 3001:3001 -p 8001:8001 -d --name server_container to_do_server && 
 ### Запуск всего приложения в контейнерах: <i>docker compose</i>
 Более простой способ запуска приложения в контейнерах - команда <i>docker compose</i> в корне проекта:
 ```
-docker-compose -f docker-compose-all.yml up -d
+docker compose -f docker-compose-all.yml up -d
 ```
