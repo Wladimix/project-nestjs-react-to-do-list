@@ -1,0 +1,39 @@
+version: '3'
+services:
+  postgresql_database:
+    container_name: postgresql_container
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=to_do_list
+    ports:
+      - 3002:5432
+  adminer:
+    container_name: adminer_container
+    image: adminer:4
+    ports:
+      - 3003:8080
+  to_do_server:
+    container_name: to_do_server_container
+    image: to_do_server
+    build:
+      context: ./
+      dockerfile: dockerfile.server
+    env_file:
+      - ./backend/.env.docker
+    ports:
+      - 3001:3001
+      - 8001:8001
+    depends_on:
+      - postgresql_database
+  to_do_client:
+    container_name: to_do_client_container
+    image: to_do_client
+    build:
+      context: ./
+      dockerfile: dockerfile.client
+    ports:
+      - 3004:3004
+    depends_on:
+    - to_do_server

@@ -1,8 +1,7 @@
 FROM node:20.13.1
 
-ARG APP_DIR=app
-RUN mkdir -p ${APP_DIR}
-WORKDIR ${APP_DIR}
+RUN mkdir -p server
+WORKDIR server
 
 COPY ./backend ./
 

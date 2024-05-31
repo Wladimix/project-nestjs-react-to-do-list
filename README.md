@@ -34,7 +34,7 @@ DATABASE_URL="postgresql://root:root@localhost:3002/to_do_list?schema=public"
 ```
 <i>:exclamation: Если БД на хосте отсутствует, можно запустить Postgresql и Adminer в Docker-контейнерах, находясь в корне проекта:</i>
 ```
-docker compose up -d
+docker compose -f docker-compose-database.yml up -d
 ```
 :arrow_up: <i>В этом случае для просмотра содержимого БД можно подключиться к Adminer по адресу http://localhost:3003.</i><br><br>
 В папке /backend установить необходимые зависимости:
@@ -71,8 +71,8 @@ npm start
 Клиент запустится по адресу http://localhost:3004.<br>
 Порт можно поменять в файле package.json.
 
-### Запуск всего приложения в контейнерах
-Файлы Dockerfile в корне проекта позволяют запустить весь проект в контейнерах.<br>
+### Запуск всего приложения в контейнерах: <i>docker run</i>
+Файлы Dockerfile в корне проекта позволяют запустить весь проект в контейнерах. При этом миграцию и сид выполнять нет необходимости.<br>
 Сначала запустим контейнер с базой данных также на 3002 порту. Можно воспользоваться <i>docker compose</i>. А можно запустить БД командой <i>docker run</i>:
 ```
 docker run -d -p 3002:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -e POSTGRES_DB=to_do_list --name database_container postgres:14-alpine
@@ -91,10 +91,16 @@ docker build -f dockerfile.server -t to_do_server .
 ```
 И с клиентской частью:
 ```
-docker build -f dockerfile.react -t to_do_client .
+docker build -f dockerfile.client -t to_do_client .
 ```
 Осталось запустить сервер и клиент:
 ```
 docker run -p 3001:3001 -p 8001:8001 -d --name server_container to_do_server && docker run -p 3004:3004 -d --name client_container to_do_client
 ```
 Заходим по адресу http://localhost:3004.
+
+### Запуск всего приложения в контейнерах: <i>docker compose</i>
+Более простой способ запуска приложения в контейнерах - команда <i>docker compose</i> в корне проекта:
+```
+docker compose -f docker-compose-all.yml up -d
+```
